@@ -1,4 +1,5 @@
 import { useIntl } from 'react-intl';
+import Image from 'next/image';
 
 import { FightIcon } from '@/components/icons/FightIcon';
 import { GlobalStats as GlobalStatsInterface } from '@/types';
@@ -17,7 +18,7 @@ export const GlobalStats = ({ className, globalStats }: GlobalStatsProps): JSX.E
 
   return (
     <div
-      className={`grid grid-cols-[repeat(4,minmax(200px,1fr))] gap-2.5 lg:gap-5 content-start overflow-x-auto mb-4 lg:mb-7.5 ${
+      className={`grid grid-cols-[repeat(5,minmax(200px,1fr))] gap-2.5 lg:gap-5 content-start overflow-x-auto mb-4 lg:mb-7.5 ${
         className || ''
       }`}
     >
@@ -56,6 +57,17 @@ export const GlobalStats = ({ className, globalStats }: GlobalStatsProps): JSX.E
           description: 'Total Pokémon caught info card title in the profile page',
         })}
         value={intl.formatNumber(globalStats.totalPokemonCaught)}
+      />
+      <InfoCard
+        icon={
+          <Image src="/badges/achievements/Badge_1_3_01.webp" alt="Walking Badge" width={40} height={40} priority />
+        }
+        title={intl.formatMessage({
+          defaultMessage: 'Total KM walked',
+          id: 'leaderboard.total_km_walked',
+          description: 'Total KM walked info card title in the profile page',
+        })}
+        value={intl.formatNumber(globalStats.totalKmWalked)}
       />
     </div>
   );

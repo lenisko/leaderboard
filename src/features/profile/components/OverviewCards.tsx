@@ -1,5 +1,6 @@
 import { useIntl } from 'react-intl';
 import { memo } from 'react';
+import Image from 'next/image';
 
 import { Trainer } from '@/types';
 import { InfoCard } from '@/components/InfoCard';
@@ -29,23 +30,6 @@ export const OverviewCards = memo(({ className, trainer }: OverviewCardsProps): 
           description: 'Team info card title in the profile page',
         })}
         value={trainer.team in teamTranslations ? intl.formatMessage(teamTranslations[trainer.team]) : ''}
-      />
-      <InfoCard
-        icon={<LastUpdateIcon />}
-        title={intl.formatMessage({
-          defaultMessage: 'Last Update',
-          id: 'profile.last_update',
-          description: 'Last update info card title in the profile page',
-        })}
-        value={intl.formatMessage(
-          {
-            defaultMessage: '{date, time, short}',
-            id: 'profile.updated_at',
-            description: 'Last updated line in the profile page',
-          },
-          { date: lastSeen },
-        )}
-        valueTooltip={intl.formatDate(lastSeen, { dateStyle: 'full', timeStyle: 'short' })}
       />
       <InfoCard
         icon={<RankIcon />}
@@ -82,6 +66,34 @@ export const OverviewCards = memo(({ className, trainer }: OverviewCardsProps): 
           description: 'Total XP info card title in the profile page',
         })}
         value={intl.formatNumber(trainer.xp || 0, { notation: 'compact' })}
+      />
+      <InfoCard
+        icon={
+          <Image src="/badges/achievements/Badge_1_3_01.webp" alt="Walking Badge" width={40} height={40} priority />
+        }
+        title={intl.formatMessage({
+          defaultMessage: 'KM',
+          id: 'profile.km_walked',
+          description: 'Total KM info card title in the profile page',
+        })}
+        value={intl.formatNumber(trainer.km_walked || 0)}
+      />
+      <InfoCard
+        icon={<LastUpdateIcon />}
+        title={intl.formatMessage({
+          defaultMessage: 'Last Update',
+          id: 'profile.last_update',
+          description: 'Last update info card title in the profile page',
+        })}
+        value={intl.formatMessage(
+          {
+            defaultMessage: '{date, time, short}',
+            id: 'profile.updated_at',
+            description: 'Last updated line in the profile page',
+          },
+          { date: lastSeen },
+        )}
+        valueTooltip={intl.formatDate(lastSeen, { dateStyle: 'full', timeStyle: 'short' })}
       />
     </div>
   );

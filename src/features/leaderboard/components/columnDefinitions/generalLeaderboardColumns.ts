@@ -20,16 +20,6 @@ export const generalLeaderboardColumns: ColumnsType = [
     type: 'number',
   },
   {
-    field: 'stops_spun',
-    minWidth: 160,
-    type: 'number',
-  },
-  {
-    field: 'unique_stops_spun',
-    minWidth: 200,
-    type: 'number',
-  },
-  {
     field: 'km_walked',
     minWidth: 110,
     type: 'number',
@@ -38,33 +28,8 @@ export const generalLeaderboardColumns: ColumnsType = [
     },
   },
   {
-    field: 'hatched',
-    minWidth: 150,
-    type: 'number',
-  },
-  {
-    field: 'quests',
-    minWidth: 150,
-    type: 'number',
-  },
-  {
-    field: 'evolved',
-    minWidth: 150,
-    type: 'number',
-  },
-  {
-    field: 'trades',
-    minWidth: 150,
-    type: 'number',
-  },
-  {
-    field: 'battles_won',
-    minWidth: 200,
-    type: 'number',
-  },
-  {
-    field: 'best_friends',
-    minWidth: 200,
+    field: 'gbl_rank',
+    minWidth: 10,
     type: 'number',
   },
 ];

@@ -5,6 +5,7 @@ export enum SupportedLocale {
   EN = 'en',
   FR = 'fr',
   DE = 'de',
+  PL = 'pl',
 }
 
 interface I18nProps {

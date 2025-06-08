@@ -11,6 +11,7 @@ export default {
       totalXp: 125332185245,
       totalBattlesWon: 391799,
       totalPokemonCaught: 3826344,
+      totalKmWalked: 23423432,
     },
   },
   parameters: {

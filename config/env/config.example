@@ -10,7 +10,7 @@
   },
   "title": "My Awesome Community Leaderboard",
   "defaultLocale": "en",
-  "enabledLocales": ["en", "fr", "de"],
+  "enabledLocales": ["en", "fr", "de", "pl"],
   "applicationURL": "https://leaderboard.mymap.fr",
   "enableAuth": false,
   "secret": "ChangeThisToARandomStringPlease",

@@ -10,7 +10,7 @@
   },
   "title": "Pokémon Go",
   "defaultLocale": "@@DEFAULT_LOCALE",
-  "enabledLocales": ["en", "fr", "de"],
+  "enabledLocales": ["en", "fr", "de", "pl"],
   "applicationURL": "@@APPLICATION_URL",
   "enableAuth": false,
   "secret": "ChangeThisToARandomString",

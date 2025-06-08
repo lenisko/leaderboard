@@ -7,11 +7,9 @@ import { Leaderboard } from '@/features/leaderboard/components/Leaderboard';
 import { Trainer } from '@/types';
 import { Tab, Group, List } from '@/components/tab';
 import { MainTab } from '@/features/leaderboard/types';
-import { leaderboardTabTranslations } from '@/features/leaderboard/lang';
 import { PeriodSelect } from '@/features/leaderboard/components/PeriodSelect';
 import { Button } from '@/components/button';
 import { SettingsIcon } from '@/features/leaderboard/components/SettingsIcon';
-import { LeaderboardPagination } from '@/features/leaderboard/components/LeaderboardPagination';
 import { LeaderboardPaginationContextProvider } from '@/features/leaderboard/components/LeaderbordPaginationContext';
 
 export const OverallLeaderboards = ({ trainers }: { trainers: Trainer[] }): JSX.Element => {
@@ -49,20 +47,6 @@ export const OverallLeaderboards = ({ trainers }: { trainers: Trainer[] }): JSX.
                   description: 'General leaderboard title',
                 })}
               </Tab>
-              <Tab>
-                {intl.formatMessage({
-                  defaultMessage: 'Battles',
-                  id: 'leaderboard.battle',
-                  description: 'Battles leaderboards title',
-                })}
-              </Tab>
-              <Tab>
-                {intl.formatMessage({
-                  defaultMessage: 'Collection',
-                  id: 'leaderboard.collection',
-                  description: 'Collection leaderboards title',
-                })}
-              </Tab>
             </div>
             <div className="hidden lg:inline-flex">
               <PeriodSelect />
@@ -78,19 +62,6 @@ export const OverallLeaderboards = ({ trainers }: { trainers: Trainer[] }): JSX.
         </List>
       </Group>
       <LeaderboardPaginationContextProvider>
-        <Group selectedIndex={selectedLeaderboardIndex} onChange={setSelectedLeaderboardIndex}>
-          <List>
-            {leaderboardsData[selectedMainTab].map((leaderboardData) => {
-              return (
-                <Tab key={leaderboardData.leaderboard} level={2}>
-                  {intl.formatMessage(leaderboardTabTranslations[leaderboardData.leaderboard])}
-                </Tab>
-              );
-            })}
-            <div className="grow" />
-            <LeaderboardPagination className="hidden lg:flex" />
-          </List>
-        </Group>
         <div className="flex">
           <div
             className={`lg:hidden transition-all duration-300 ${

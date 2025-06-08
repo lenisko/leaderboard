@@ -5,7 +5,8 @@ const globalPlayerStatsQuery = `
     SELECT COUNT(1)                            AS totalRegisteredTrainers,
            CAST(SUM(xp) AS signed)             AS totalXp,
            CAST(SUM(battles_won) AS signed)    AS totalBattlesWon,
-           CAST(SUM(caught_pokemon) AS signed) AS totalPokemonCaught
+           CAST(SUM(caught_pokemon) AS signed) AS totalPokemonCaught,
+           CAST(SUM(km_walked) AS signed)      AS totalKmWalked
     FROM   player
     WHERE  friendship_id IS NOT NULL OR friend_code IS NOT NULL
     ORDER  BY xp DESC;

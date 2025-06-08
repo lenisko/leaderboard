@@ -95,7 +95,7 @@
     "defaultMessage": "Sammler riesiger Pokémon",
     "description": "Badge JUMBO_POKEMON_CAUGHT"
   },
-  "badge_km_walked": {
+  "profile.km_walked": {
     "defaultMessage": "Jogger",
     "description": "Badge KM_WALKED"
   },
@@ -334,6 +334,10 @@
   "leaderboard.total_pokemon_caught": {
     "defaultMessage": "Gesamtzahl gefangene Pokémon",
     "description": "Total Pokémon caught info card title in the profile page"
+  },
+  "leaderboard.total_km_walked": {
+    "defaultMessage": "Insgesamt gelaufene KM",
+    "description": "Total KM walked info card title in the profile page"
   },
   "leaderboard.type": {
     "defaultMessage": "Typen",

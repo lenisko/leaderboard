@@ -3,4 +3,5 @@ export interface GlobalStats {
   totalPokemonCaught: number;
   totalRegisteredTrainers: number;
   totalXp: number;
+  totalKmWalked: number;
 }
