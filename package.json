@@ -28,23 +28,6 @@
     "start": "cross-env NODE_ENV=production concurrently --kill-others --names next,back \"node dist/server/start-next.js\" \"node dist/server/index.js\"",
     "storybook": "storybook dev -p 7349 -h localhost"
   },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint",
-      "formatjs"
-    ],
-    "extends": [
-      "next/core-web-vitals",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended"
-    ],
-    "rules": {
-      "formatjs/enforce-id": [
-        "error"
-      ]
-    }
-  },
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "eslint --fix"

@@ -118,8 +118,10 @@ export const getPeriodTrainers = async (period: keyof PeriodLeaderboard): Promis
   const interval = periodIntervals[period];
   const queryWithInterval = periodLeaderboardQuery.replace('__INTERVAL__', `${interval}`);
 
-  const [friendshipIdRows] = await pool.execute(queryWithInterval.replace(/__JOIN_COLUMN__/g, 'friendship_id'));
-  const [friendCodeRows] = await pool.execute(queryWithInterval.replace(/__JOIN_COLUMN__/g, 'friend_code'));
+  const [[friendshipIdRows], [friendCodeRows]] = await Promise.all([
+    pool.execute(queryWithInterval.replace(/__JOIN_COLUMN__/g, 'friendship_id')),
+    pool.execute(queryWithInterval.replace(/__JOIN_COLUMN__/g, 'friend_code')),
+  ]);
 
   return (friendshipIdRows as unknown as RawPeriodTrainer[])
     .concat(friendCodeRows as unknown as RawPeriodTrainer[])

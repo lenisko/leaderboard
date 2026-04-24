@@ -8,7 +8,7 @@ const getGuilds = async (accessToken: string): Promise<Array<APIPartialGuild>> =
     },
   });
 
-  const data = response.json();
+  const data = await response.json();
 
   if ('message' in data && typeof data.message === 'string') {
     throw new Error(`Failed to get guilds: ${JSON.stringify(data)}`);
@@ -24,7 +24,7 @@ const getGuildMember = async (guildId: string, userId: string): Promise<APIGuild
     },
   });
 
-  const data = response.json();
+  const data = await response.json();
 
   if ('message' in data && typeof data.message === 'string') {
     throw new Error(`Failed to get user's #${userId} guild #${guildId}: ${JSON.stringify(data)}`);

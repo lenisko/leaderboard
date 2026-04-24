@@ -6,6 +6,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "ignoreDeprecations": "6.0",
     "incremental": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -22,5 +23,5 @@
     "target": "es5"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "server/**/*.ts"]
+  "exclude": ["node_modules", "server/**/*.ts", "src/**/*.stories.tsx"]
 }

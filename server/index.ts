@@ -24,9 +24,11 @@ job(
 async function bootstrap() {
   try {
     await createTrainerHistoryTable();
-    await addFriendCodeToHistoryTable();
-    await addGen9ToHistoryTable();
-    await addRouteTeamAmbassadorBadgesToHistoryTable();
+    await Promise.all([
+      addFriendCodeToHistoryTable(),
+      addGen9ToHistoryTable(),
+      addRouteTeamAmbassadorBadgesToHistoryTable(),
+    ]);
   } catch (err) {
     logger.fatal(err);
   }
