@@ -89,7 +89,9 @@
     }
 
     .ag-row {
-      @apply h-14 border-none box-border;
+      @apply h-14 box-border;
+      border-top: 1px solid #e0e6eb;
+      border-bottom: none;
     }
 
     .ag-row-hover {
