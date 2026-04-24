@@ -103,6 +103,17 @@
       @apply bg-[#f0f4fa] cursor-pointer;
     }
 
+    .ag-row-focus,
+    .ag-row-selected {
+      outline: none;
+      border-color: #e0e6eb;
+    }
+
+    .ag-cell-focus {
+      outline: none;
+      border: none !important;
+    }
+
     .ag-cell,
     .ag-header-cell {
       @apply inline-flex items-center px-4 box-border;
