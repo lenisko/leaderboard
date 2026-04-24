@@ -1,0 +1,13 @@
+NODE_ENV ?= production
+export NODE_ENV
+
+.PHONY: build install start
+
+install:
+	npm ci
+
+build:
+	npm run build
+
+start:
+	npm run start
