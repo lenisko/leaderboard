@@ -89,7 +89,7 @@
     }
 
     .ag-row {
-      @apply h-14 border-t border-grey-20 box-border;
+      @apply h-14 border-none box-border;
     }
 
     .ag-row-hover {
