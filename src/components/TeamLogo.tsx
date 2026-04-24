@@ -1,23 +1,12 @@
-import { JSXElementConstructor } from 'react';
-
 import { Instinct } from '@/components/icons/Instinct';
 import { Mystic } from '@/components/icons/Mystic';
 import { Valor } from '@/components/icons/Valor';
 import { Team } from '@/types';
 
-const teamToLogo = (team: Team): JSXElementConstructor<Record<string, unknown>> => {
-  switch (team) {
-    case Team.VALOR:
-      return Valor;
-    case Team.INSTINCT:
-      return Instinct;
-    case Team.MYSTIC:
-      return Mystic;
-    default:
-      // TODO: handle Harmony
-      // eslint-disable-next-line react/display-name
-      return () => <div />;
-  }
+const teamLogos: Record<number, (props: Record<string, unknown>) => JSX.Element> = {
+  [Team.VALOR]: Valor,
+  [Team.INSTINCT]: Instinct,
+  [Team.MYSTIC]: Mystic,
 };
 
 interface TeamLogoProps {
@@ -26,7 +15,9 @@ interface TeamLogoProps {
 }
 
 export const TeamLogo = ({ team, className }: TeamLogoProps): JSX.Element => {
-  const Logo = teamToLogo(team);
+  const Logo = teamLogos[team];
+
+  if (!Logo) return <div />;
 
   return <Logo className={className} />;
 };

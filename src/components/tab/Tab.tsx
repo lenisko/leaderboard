@@ -9,8 +9,7 @@ export const Tab = ({ level = 1, children, ...props }: TabProps): JSX.Element =>
       className={({ selected }: { selected: boolean }) => {
         return clsx({
           'px-3.5 title-3 focus:outline-none text-grey-70 relative': true,
-          'before:content-[attr(data-text)] before:h-0 before:invisible before:font-semibold before:overflow-hidden before:pointer-events-none before:block':
-            true,
+          'before:content-[attr(data-text)] before:h-0 before:invisible before:font-semibold before:overflow-hidden before:pointer-events-none before:block': true,
           'first:pl-0 hover:text-black disabled:text-[#BCC3D7] lg:title-2 my-3 lg:my-2.5 h-4 lg:h-5': level === 1,
           'after:content-[attr(data-text)] after:text-transparent after:h-0.5 after:bg-gradient after:block after:absolute after:bottom-[-25px] lg:after:bottom-[-31px] after:rounded-md':
             level === 1 && selected,

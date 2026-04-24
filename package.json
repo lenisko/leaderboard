@@ -21,7 +21,7 @@
     "postbuild:next2": "cp -r public .next/standalone/public && cp -r .next/static .next/standalone/.next/static",
     "postinstall": "node-config-ts",
     "prebuild": "node-config-ts && npm run schema:create",
-    "prepare": "husky",
+    "prepare": "husky || true",
     "prettier": "prettier --write --ignore-unknown 'src/**/*'",
     "schema:create": "cross-env NODE_ENV=production tsx --tsconfig tsconfig.server.json server/create-schema.ts",
     "schema:migrate": "cross-env NODE_ENV=production tsx --tsconfig tsconfig.server.json server/migrate-schema-to-golbat.ts",
