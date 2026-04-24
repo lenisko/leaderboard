@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run i18n:compile && npm run build:server && npm run build:next",
     "build-storybook": "storybook build",
-    "build:next": "next build",
+    "build:next": "next build --webpack",
     "build:server": "tsc --project tsconfig.server.json",
     "postbuild:server": "fix-esm-import-path dist/server/index.js",
     "chromatic": "chromatic --exit-zero-on-changes",

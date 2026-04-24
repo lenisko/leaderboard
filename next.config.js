@@ -26,7 +26,6 @@ export default {
   output: undefined,
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
   webpack: (config) => {
     config.plugins.push(
       new StatsWriterPlugin({
