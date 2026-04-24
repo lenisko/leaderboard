@@ -12,7 +12,8 @@
 
 @font-face {
   font-family: 'proxima_nova';
-  src: url('/fonts/proximanova-regular-webfont.woff2') format('woff2'),
+  src:
+    url('/fonts/proximanova-regular-webfont.woff2') format('woff2'),
     url('/fonts/proximanova-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -20,7 +21,8 @@
 
 @font-face {
   font-family: 'proxima_nova';
-  src: url('/fonts/proximanova-semibold-webfont.woff2') format('woff2'),
+  src:
+    url('/fonts/proximanova-semibold-webfont.woff2') format('woff2'),
     url('/fonts/proximanova-semibold-webfont.woff') format('woff');
   font-weight: bold;
   font-style: normal;
@@ -28,7 +30,8 @@
 
 @font-face {
   font-family: 'proxima_nova';
-  src: url('/fonts/proximanova-bold-webfont.woff2') format('woff2'),
+  src:
+    url('/fonts/proximanova-bold-webfont.woff2') format('woff2'),
     url('/fonts/proximanova-bold-webfont.woff') format('woff');
   font-weight: bold;
   font-style: normal;
@@ -78,7 +81,58 @@
     @apply text-black z-0;
 
     .ag-root-wrapper {
-      @apply bg-white-100;
+      @apply bg-white-100 overflow-hidden;
+    }
+
+    .ag-root-wrapper-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ag-root {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      flex: 1 1 auto;
+    }
+
+    .ag-body-viewport {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      overflow: auto;
+    }
+
+    .ag-center-cols-container {
+      display: block;
+      min-width: 100%;
+    }
+
+    .ag-header-viewport,
+    .ag-floating-top-viewport,
+    .ag-floating-bottom-viewport {
+      overflow: hidden;
+    }
+
+    .ag-header-row,
+    .ag-row {
+      display: flex;
+      width: 100%;
+    }
+
+    .ag-cell,
+    .ag-header-cell {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .ag-hidden {
+      display: none !important;
+    }
+
+    .ag-paging-panel {
+      display: none;
     }
 
     .ag-header {
