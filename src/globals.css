@@ -86,6 +86,11 @@
 
     .ag-header {
       height: 46px;
+      border-bottom: none;
+    }
+
+    .ag-row:last-child {
+      border-bottom: none;
     }
 
     .ag-row {
