@@ -1,4 +1,4 @@
-import { GridApi } from '@ag-grid-community/core';
+import type { GridApi } from 'ag-grid-community';
 import { createContext, Dispatch, FC, ReactNode, SetStateAction, useContext, useState } from 'react';
 
 export interface Pagination {

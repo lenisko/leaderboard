@@ -1,4 +1,4 @@
-import type { ValueGetterParams, ICellRendererParams } from '@ag-grid-community/core';
+import type { ValueGetterParams, ICellRendererParams } from 'ag-grid-community';
 import { FC } from 'react';
 
 import { Trainer } from '@/types';

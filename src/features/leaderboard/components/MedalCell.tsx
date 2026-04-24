@@ -1,4 +1,4 @@
-import { ICellRendererParams } from '@ag-grid-community/core';
+import type { ICellRendererParams } from 'ag-grid-community';
 import { MedalIcon } from '@/features/leaderboard/components/icons/MedalIcon';
 
 export const MedalCell = ({ value }: ICellRendererParams): JSX.Element => {
