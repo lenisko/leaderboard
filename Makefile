@@ -7,7 +7,7 @@ setup:
 	volta install node@22
 
 install: setup
-	npm ci
+	npm ci --legacy-peer-deps
 
 build:
 	npm run build
