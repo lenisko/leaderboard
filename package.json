@@ -92,7 +92,7 @@
     "npm": ">= 9"
   },
   "volta": {
-    "node": "18.19.0"
+    "node": "20.19.0"
   },
   "dependencies": {
     "@ag-grid-community/client-side-row-model": "^32.3.9",
