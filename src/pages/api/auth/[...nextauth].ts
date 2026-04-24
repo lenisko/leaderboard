@@ -6,7 +6,6 @@ import { Sequelize, DataTypes } from 'sequelize';
 
 import { leaderboardConnectionString } from '@/database';
 import { userHasAccess } from '@/features/auth/api/discord';
-import { resolveConfig } from '@/utils/resolveConfig';
 
 export const sequelize = new Sequelize(leaderboardConnectionString, { logging: false });
 export const adapter = SequelizeAdapter(sequelize, {
@@ -90,5 +89,3 @@ export const authOptions: NextAuthOptions = {
 };
 
 export default NextAuth(authOptions);
-
-resolveConfig();

@@ -10,12 +10,6 @@ import {
 import { isUserNotLoggedIn } from '@/features/auth/api/apiGuard';
 import { GlobalStats, Trainer } from '@/types';
 import { setCacheControlHeader } from '@/utils/apiCacheControl';
-import { resolveConfig } from '@/utils/resolveConfig';
-
-interface ApiError {
-  code: number;
-  message: string;
-}
 
 interface Response {
   trainers: Trainer[];
@@ -23,8 +17,7 @@ interface Response {
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default async (request: NextApiRequest, response: NextApiResponse<Response | ApiError>): Promise<void> => {
-  resolveConfig();
+export default async (request: NextApiRequest, response: NextApiResponse<Response>): Promise<void> => {
   if (await isUserNotLoggedIn(request, response)) {
     return;
   }
