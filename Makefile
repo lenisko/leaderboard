@@ -1,9 +1,12 @@
 NODE_ENV ?= production
 export NODE_ENV
 
-.PHONY: build install start
+.PHONY: build install start setup
 
-install:
+setup:
+	volta install node@22
+
+install: setup
 	npm ci
 
 build:
