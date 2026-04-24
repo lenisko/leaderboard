@@ -81,7 +81,7 @@
     @apply text-black z-0;
 
     .ag-root-wrapper {
-      @apply bg-white-100;
+      @apply bg-white-100 border-none;
     }
 
     .ag-header {
