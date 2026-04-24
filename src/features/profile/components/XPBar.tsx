@@ -63,8 +63,11 @@ export const XPBar = ({ trainer }: { trainer: Trainer }): JSX.Element | null => 
   const intl = useIntl();
   const isMobile = !useBreakpoint('xs');
 
-  const requiredXP = XPRequirements[trainer.level].needed;
-  const levelProgression = trainer.level === MAX_LEVEL ? 100 : trainer.xp - XPRequirements[trainer.level].total;
+  const levelData = XPRequirements[trainer.level];
+  if (!levelData) return null;
+
+  const requiredXP = levelData.needed;
+  const levelProgression = trainer.level === MAX_LEVEL ? 100 : trainer.xp - levelData.total;
   const levelPercent = trainer.level === MAX_LEVEL ? 100 : Math.min(100, (levelProgression / requiredXP) * 100);
 
   return (
