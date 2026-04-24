@@ -1,11 +1,11 @@
-import { Listbox } from '@headlessui/react';
-import { Fragment, PropsWithChildren } from 'react';
+import { ListboxOption } from '@headlessui/react';
+import { PropsWithChildren } from 'react';
 
-type OptionProps = PropsWithChildren<Parameters<typeof Listbox.Option>[0]>;
+type OptionProps = PropsWithChildren<Parameters<typeof ListboxOption>[0]>;
 
 export const Option = ({ children, ...props }: OptionProps): JSX.Element => {
   return (
-    <Listbox.Option as={Fragment} {...props}>
+    <ListboxOption {...props}>
       {({ selected }) => (
         <li
           className={`py-2 px-2.5 cursor-pointer focus:outline-none ${
@@ -15,6 +15,6 @@ export const Option = ({ children, ...props }: OptionProps): JSX.Element => {
           {children}
         </li>
       )}
-    </Listbox.Option>
+    </ListboxOption>
   );
 };

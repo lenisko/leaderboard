@@ -23,7 +23,7 @@ export const OverallLeaderboards = ({ trainers }: { trainers: Trainer[] }): JSX.
 
   return (
     <div>
-      <div className="flex justify-between mb-3 lg:mb-5">
+      <div className="flex justify-end mb-3 lg:mb-5">
         <div className="hidden lg:inline-flex">
           <PeriodSelect />
         </div>

@@ -1,17 +1,15 @@
-import { Listbox } from '@headlessui/react';
-import { ForwardedRef, forwardRef } from 'react';
+import { ListboxOptions } from '@headlessui/react';
 
-type OptionsProps = Parameters<typeof Listbox.Options>[0];
+type OptionsProps = Parameters<typeof ListboxOptions>[0];
 
-export const Options = forwardRef(({ children, ...props }: OptionsProps, ref) => {
+export const Options = ({ children, ...props }: OptionsProps): JSX.Element => {
   return (
-    <Listbox.Options
-      className="absolute focus:outline-none rounded bg-white-100 right-0 top-11 py-1 drop-shadow-normal z-10"
-      ref={ref as ForwardedRef<HTMLElement>}
+    <ListboxOptions
+      className="absolute focus:outline-none rounded bg-white-100 right-0 top-11 py-1 drop-shadow-normal z-10 transition duration-300 data-[closed]:opacity-0"
       {...props}
     >
       {children}
-    </Listbox.Options>
+    </ListboxOptions>
   );
-});
+};
 Options.displayName = 'Options';

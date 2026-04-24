@@ -1,5 +1,4 @@
 import { defineMessage, FormattedMessage, useIntl } from 'react-intl';
-import { Transition } from '@headlessui/react';
 import { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/router';
 
@@ -72,22 +71,13 @@ export const PeriodSelect = ({ className }: PeriodSelectProps): JSX.Element => {
         <FormattedMessage defaultMessage="Period" id="leaderboard.period" description="Period dropdown" />
       </Label>
       <Button>{intl.formatMessage(selectedOption.label)}</Button>
-      <Transition
-        enter="transition-opacity duration-300 z-10"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-300 z-10"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-      >
-        <Options>
-          {options.map((option, index) => (
-            <Option key={index} value={option}>
-              {intl.formatMessage(option.label)}
-            </Option>
-          ))}
-        </Options>
-      </Transition>
+      <Options>
+        {options.map((option, index) => (
+          <Option key={index} value={option}>
+            {intl.formatMessage(option.label)}
+          </Option>
+        ))}
+      </Options>
     </Select>
   );
 };

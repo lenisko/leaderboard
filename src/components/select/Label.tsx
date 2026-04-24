@@ -1,10 +1,11 @@
-import { Listbox } from '@headlessui/react';
+import { Label as HeadlessLabel } from '@headlessui/react';
+import { PropsWithChildren } from 'react';
 
-export const Label: typeof Listbox.Label<'label'> = ({ children, ...props }) => {
+export const Label = ({ children, ...props }: PropsWithChildren): JSX.Element => {
   return (
-    <Listbox.Label className="mr-2.5" {...props}>
+    <HeadlessLabel className="mr-2.5" {...props}>
       {children}
-    </Listbox.Label>
+    </HeadlessLabel>
   );
 };
 Label.displayName = 'Label';
