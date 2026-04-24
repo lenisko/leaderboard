@@ -12,7 +12,6 @@ export interface Trainer {
   friendship_id?: string;
   gbl_rank?: number;
   gbl_rating?: number;
-  event_badges?: string;
   stops_spun?: number;
   evolved?: number;
   hatched?: number;

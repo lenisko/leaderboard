@@ -10,7 +10,6 @@ export const trainer = {
   friendship_id: 'E:sunI00VFcMh/kvGH5OFTV2Ou0Mma6a1gO5ZnUrv/92wHLcRj1brKFsFZaTHfKQWV',
   gbl_rank: 1,
   gbl_rating: undefined,
-  event_badges: '5231,5233,5072,2030,5076,5028,2055,5202,5248,5059,5100',
   stops_spun: 111980,
   evolved: 4727,
   hatched: 5368,
